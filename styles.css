@@ -1,0 +1,429 @@
+/* styles.css */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f0f4f8;
+    color: #333;
+    min-height: 100vh;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 800px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  header h1 {
+    font-size: 2rem;
+    color: #2a9d8f;
+  }
+  
+  #trip-stats {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 10px;
+    color: #555;
+    font-size: 1.1rem;
+  }
+  
+  #trip-stats span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #trip-stats span span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2a9d8f;
+  }
+  
+  .dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  button {
+    background-color: #2a9d8f;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #21867a;
+  }
+  
+  #search-bar {
+    width: 80%;
+    padding: 10px;
+    margin: 15px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+  
+  .itinerary-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    width: 100%;
+  }
+  
+  .itinerary-card {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+  }
+  
+  .itinerary-card:hover {
+    transform: scale(1.02);
+  }
+  
+  .itinerary-card h3 {
+    font-size: 1.5rem;
+    color: #264653;
+    margin-bottom: 5px;
+  }
+  
+  .itinerary-card p {
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .itinerary-card button {
+    padding: 5px 10px;
+    font-size: 0.9rem;
+  }
+  
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .modal-content {
+    background-color: #ffffff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.3s ease-out;
+  }
+  
+  @keyframes slideIn {
+    from {transform: translateY(-20px); opacity: 0;}
+    to {transform: translateY(0); opacity: 1;}
+  }
+  
+  .close-btn {
+    color: #555;
+    float: right;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .close-btn:hover {
+    color: #000;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+    margin: 10px 0 5px;
+  }
+  
+  input[type="text"],
+  input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+  
+  .packing-list {
+    background-color: #f0f4f8;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+  }
+  
+  .packing-list h2 {
+    font-size: 1.5rem;
+    color: #2a9d8f;
+    margin-bottom: 10px;
+  }
+  
+  .packing-input {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  
+  #packing-item {
+    flex: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+  }
+  
+  #add-item-btn {
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  #packing-items {
+    list-style-type: none;
+  }
+  
+  #packing-items li {
+    background-color: #ffffff;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  #packing-items li button {
+    background-color: #e63946;
+    color: #ffffff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #packing-items li button:hover {
+    background-color: #d62828;
+  }
+  
+  /* Calendar Styling */
+  .calendar-container {
+    margin-top: 20px;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .calendar h2 {
+    text-align: center;
+    color: #2a9d8f;
+    margin-bottom: 10px;
+  }
+  
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .calendar-header button {
+    background-color: #2a9d8f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .calendar-header span {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #264653;
+  }
+  
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    text-align: center;
+    color: #333;
+  }
+  
+  .calendar-grid div {
+    padding: 10px;
+    font-weight: bold;
+  }
+  
+  .calendar-day,
+  .empty-day {
+    background-color: #ffffff;
+    border-radius: 4px;
+    padding: 10px;
+    min-height: 60px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+  
+  .calendar-day:hover {
+    background-color: #e0f7f4;
+  }
+  
+  /* Toggle Switch Styles */
+.switch {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider {
+    background-color: #2a9d8f;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+  
+  /* Dark Mode Styles */
+  body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+  }
+  
+  body.dark-mode .container {
+    background-color: #1e1e1e;
+  }
+  
+  body.dark-mode header h1 {
+    color: #80cbc4;
+  }
+  
+  body.dark-mode #trip-stats span {
+    color: #bbbbbb;
+  }
+  
+  body.dark-mode #trip-stats span span {
+    color: #80cbc4;
+  }
+  
+  body.dark-mode button {
+    background-color: #80cbc4;
+    color: #000000;
+  }
+  
+  body.dark-mode button:hover {
+    background-color: #4db6ac;
+  }
+  
+  body.dark-mode input[type="text"],
+  body.dark-mode input[type="date"] {
+    background-color: #2e2e2e;
+    color: #ffffff;
+    border: 1px solid #555555;
+  }
+  
+  body.dark-mode .itinerary-card {
+    background-color: #2e2e2e;
+  }
+  
+  body.dark-mode .calendar-container {
+    background-color: #1e1e1e;
+  }
+  
+  body.dark-mode .calendar-day,
+  body.dark-mode .empty-day {
+    background-color: #2e2e2e;
+    color: #ffffff;
+  }
+  
+  body.dark-mode .calendar-day:hover {
+    background-color: #3e3e3e;
+  }
+  
+  body.dark-mode .modal-content {
+    background-color: #1e1e1e;
+  }
+  
+  body.dark-mode .close-btn {
+    color: #ffffff;
+  }
+  
+  body.dark-mode .packing-list {
+    background-color: #1e1e1e;
+  }
+  
+  body.dark-mode .packing-list h2 {
+    color: #80cbc4;
+  }
+  
+  body.dark-mode #packing-items li {
+    background-color: #2e2e2e;
+    color: #ffffff;
+  }
+  
+  body.dark-mode #packing-items li button {
+    background-color: #e57373;
+  }
